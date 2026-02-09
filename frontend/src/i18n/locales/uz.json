@@ -1,0 +1,131 @@
+{
+    "common": {
+        "home": "Bosh sahifa",
+        "works": "Biz qilgan ishlar",
+        "services": "Xizmatlar",
+        "contact": "Bog'lanish",
+        "orderNow": "Buyurtma berish",
+        "learnMore": "Batafsil",
+        "sendMessage": "Xabar yuborish",
+        "viewAll": "Barchasini ko'rish",
+        "loading": "Yuklanmoqda...",
+        "success": "Muvaffaqiyatli!",
+        "error": "Xatolik yuz berdi",
+        "phone": "Telefon",
+        "name": "Ism",
+        "message": "Xabar",
+        "orderSimilar": "Shunga o'xshash buyurtma berish"
+    },
+    "hero": {
+        "title": "Reklama Olamining",
+        "titleHighlight": "Milliy Yetakchisi",
+        "subtitle": "Biznesingizni yangi bosqichga olib chiqamiz. Premium poligrafiya, tashqi reklama va zamonaviy dizayn yechimlari bilan.",
+        "cta": "Xizmatlarni ko'rish",
+        "ctaSecondary": "Aloqaga chiqish"
+    },
+    "services": {
+        "title": "Bizning Xizmatlar",
+        "subtitle": "Sifat va ijodkorlik bilan sizning brendingizni dunyoga taniting",
+        "emptyMessage": "Hozircha xizmatlar topilmadi",
+        "emptyDescription": "Boshqa kategoriyani tanlang yoki keyinroq qaytib keling",
+        "filter": {
+            "all": "Hammasi"
+        },
+        "categories": {
+            "poligrafiya": {
+                "title": "Poligrafiya",
+                "description": "Vizitkalardan kataloglargacha - barcha bosma mahsulotlar"
+            },
+            "tashqi_reklama": {
+                "title": "Tashqi Reklama",
+                "description": "Banner, bilbord va fasad yozuvlari bilan ko'rinuvchanlikni oshiring"
+            },
+            "ichki_reklama": {
+                "title": "Ichki Reklama",
+                "description": "Ofis va ko'rgazmalar uchun professional reklama yechimlari"
+            },
+            "dizayn": {
+                "title": "Dizayn Xizmatlari",
+                "description": "Logo, brending va ijtimoiy tarmoqlar uchun kreativ dizayn"
+            },
+            "raqamli_it": {
+                "title": "Raqamli Reklama & IT",
+                "description": "Veb-sayt, SMM va onlayn marketing xizmatlari"
+            },
+            "souvenir_promo": {
+                "title": "Souvenir & Promo",
+                "description": "Brendlangan sovg'alar va reklama mahsulotlari"
+            },
+            "ishlab_chiqarish": {
+                "title": "Ishlab Chiqarish & Montaj",
+                "description": "Reklama konstruksiyalari va professional o'rnatish"
+            }
+        },
+        "poligrafiya": {
+            "title": "Poligrafiya",
+            "description": "Vizitkalardan kataloglargacha - barcha bosma mahsulotlar"
+        },
+        "outdoor": {
+            "title": "Tashqi Reklama",
+            "description": "Banner, bilbord va fasad yozuvlari bilan ko'rinuvchanlikni oshiring"
+        },
+        "design": {
+            "title": "Dizayn",
+            "description": "Logo, brending va ijtimoiy tarmoqlar uchun professional dizayn"
+        }
+    },
+    "works": {
+        "title": "Biz Qilgan Ishlar",
+        "subtitle": "Professional yondashish va sifatli natijalar - bizning izimiz",
+        "emptyMessage": "Hozircha ishlar yo'q"
+    },
+    "contact": {
+        "title": "Biz Bilan Bog'laning",
+        "subtitle": "Savollaringiz bormi? Biz har doim yordam berishga tayyormiz!",
+        "form": {
+            "namePlaceholder": "To'liq ismingiz",
+            "phonePlaceholder": "+998 XX XXX XX XX",
+            "messagePlaceholder": "Xabaringizni yozing...",
+            "submit": "Xabar yuborish",
+            "sending": "Yuborilmoqda..."
+        },
+        "info": {
+            "title": "Kontakt ma'lumotlari",
+            "phone": "+998 99 550 60 40 / +998 93 999 91 64",
+            "email": "holmamatovsamandar10@gmail.com",
+            "address": "Samarqand shaxar Farxadiskiy 10",
+            "workHours": "Dush-Shan: 9:00 - 20:00"
+        },
+        "success": "Xabaringiz muvaffaqiyatli yuborildi! Tez orada siz bilan bog'lanamiz.",
+        "error": "Xabar yuborishda xatolik yuz berdi. Iltimos, qaytadan urinib ko'ring."
+    },
+    "footer": {
+        "description": "O'zbekistonning yetakchi reklama agentligi. Biznesingizni rivojlantirish uchun ishonchli hamkor.",
+        "quickLinks": "Tezkor havolalar",
+        "contactUs": "Bog'lanish",
+        "followUs": "Bizni kuzating",
+        "rights": "Barcha huquqlar himoyalangan."
+    },
+    "trust": {
+        "title": "Nima Uchun Biz?",
+        "subtitle": "Yillar davomida orttirilgan tajriba va ishonch",
+        "items": {
+            "experience": {
+                "title": "10+ Yillik Tajriba",
+                "description": "Soha bo'yicha chuqur bilim va tajribaga egamiz"
+            },
+            "quality": {
+                "title": "Premium Sifat",
+                "description": "Eng yuqori sifat standartlariga amal qilamiz"
+            },
+            "speed": {
+                "title": "Tez Yetkazish",
+                "description": "Vaqtida va sifatli bajarilgan ishlar kafolati"
+            },
+            "price": {
+                "title": "Hamyonbop Narxlar",
+                "description": "Professional xizmatlar mos narxlarda"
+            }
+        }
+    }
+}
