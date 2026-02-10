@@ -18,49 +18,49 @@ const services = [
         categoryKey: 'poligrafiya',
         color: 'from-blue-500 to-blue-600',
         shadow: 'shadow-blue-500/30',
-        image: 'https://images.unsplash.com/photo-1562408590-e32931084e23?w=400&q=80',
+        image: '/poligrafiya.png',
     },
     {
         icon: Megaphone,
         categoryKey: 'tashqi_reklama',
         color: 'from-orange-500 to-orange-600',
         shadow: 'shadow-orange-500/30',
-        image: 'https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=400&q=80',
+        image: '/tashqi_reklama.png',
     },
     {
         icon: HomeIcon,
         categoryKey: 'ichki_reklama',
         color: 'from-teal-500 to-teal-600',
         shadow: 'shadow-teal-500/30',
-        image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&q=80',
+        image: '/ichki_reklama.png',
     },
     {
         icon: Palette,
         categoryKey: 'dizayn',
         color: 'from-purple-500 to-purple-600',
         shadow: 'shadow-purple-500/30',
-        image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400&q=80',
+        image: '/dizayn_hizmatlari.png',
     },
     {
         icon: Monitor,
         categoryKey: 'raqamli_it',
         color: 'from-cyan-500 to-cyan-600',
         shadow: 'shadow-cyan-500/30',
-        image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&q=80',
+        image: '/raqamli_reklama_&_IT.png',
     },
     {
         icon: Gift,
         categoryKey: 'souvenir_promo',
         color: 'from-pink-500 to-pink-600',
         shadow: 'shadow-pink-500/30',
-        image: 'https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=400&q=80',
+        image: '/Souvenir_&_Promo.png',
     },
     {
         icon: Wrench,
         categoryKey: 'ishlab_chiqarish',
         color: 'from-amber-500 to-amber-600',
         shadow: 'shadow-amber-500/30',
-        image: 'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=400&q=80',
+        image: '/Ishlab_Chiqarish_&_Montaj.png',
     },
 ];
 
@@ -99,9 +99,9 @@ export default function ServicesPreview() {
                                     <img
                                         src={service.image}
                                         alt={t(`services.categories.${service.categoryKey}.title`)}
-                                        className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                                        className="w-full h-[125%] object-cover object-center transform group-hover:scale-110 transition-transform duration-500"
                                     />
-                                    <div className={`absolute inset-0 bg-gradient-to-t ${service.color} opacity-60 group-hover:opacity-40 transition-opacity duration-300`} />
+                                    <div className={`absolute inset-0 bg-gradient-to-t ${service.color} opacity-20 group-hover:opacity-10 transition-opacity duration-300`} />
 
                                     {/* Icon Badge */}
                                     <div className="absolute top-3 left-3">

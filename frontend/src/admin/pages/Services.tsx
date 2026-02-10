@@ -5,10 +5,14 @@ import toast from 'react-hot-toast';
 import { servicesApi } from '../../api';
 import type { Service } from '../../types';
 
-const categoryNames = {
+const categoryNames: Record<string, string> = {
     poligrafiya: 'Poligrafiya',
     tashqi_reklama: 'Tashqi reklama',
+    ichki_reklama: 'Ichki reklama',
     dizayn: 'Dizayn',
+    raqamli_it: 'Raqamli IT',
+    souvenir_promo: 'Souvenir & Promo',
+    ishlab_chiqarish: 'Ishlab chiqarish',
 };
 
 export default function AdminServices() {
@@ -61,7 +65,7 @@ export default function AdminServices() {
             <h2 className="text-2xl font-bold">Xizmatlar</h2>
             <p className="text-dark-500">Xizmatlar avtomatik seed qilingan. Faqat status o'zgartirish mumkin.</p>
 
-            {(['poligrafiya', 'tashqi_reklama', 'dizayn'] as const).map((category) => (
+            {(['poligrafiya', 'tashqi_reklama', 'ichki_reklama', 'dizayn', 'raqamli_it', 'souvenir_promo', 'ishlab_chiqarish'] as const).map((category) => (
                 <div key={category}>
                     <h3 className="text-lg font-bold mb-4">{categoryNames[category]}</h3>
                     <div className="grid gap-3">

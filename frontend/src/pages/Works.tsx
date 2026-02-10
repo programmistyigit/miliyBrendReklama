@@ -109,6 +109,7 @@ export default function Works() {
             {selectedWork && (
                 <OrderModal
                     work={selectedWork}
+                    imageSrc={selectedWork.image.startsWith('/') ? selectedWork.image : `/uploads/${selectedWork.image}`}
                     onClose={() => setSelectedWork(null)}
                 />
             )}

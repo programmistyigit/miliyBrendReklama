@@ -5,6 +5,12 @@
 @tailwind utilities;
 
 :root {
+  --ag-primary-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --ag-secondary-ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --ag-exit-ease: cubic-bezier(0.55, 0, 0.68, 0.53);
+}
+
+:root {
   /* Primary Colors - Forest Green (#324F36) */
   --primary-50: #f2f5f3;
   --primary-100: #e5ebe7;

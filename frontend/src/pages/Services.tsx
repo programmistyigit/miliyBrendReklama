@@ -18,6 +18,35 @@ import { servicesApi } from '../api';
 import type { Service, Language } from '../types';
 import OrderModal from '../components/ui/OrderModal';
 
+// Helper function to get local service image
+const getServiceImage = (nameUz: string) => {
+    // Exact mapping for names that don't match public filenames perfectly
+    const mapping: Record<string, string> = {
+        'Instagram post va story dizayn': 'Instagram Facebook reklama.jpg',
+        'UI/UX dizayn': 'UX dizayn.png',
+        'WebAR / AR reklama loyihalari': 'WebAR  AR reklama loyihalari.jpg',
+        'O\'lchov olish va joylash rejalash': 'O\'lchov olish va joylash rejalash Reklama joylashtirishdan oldin professional o\'lchov va rejalashtiris.png',
+        'Texnik xizmat va yangilash': 'Texnik xizmat va yangilash Mavjud reklama konstruksiyalariga texnik xizmat ko\'rsatish va yangilas.png',
+        'Qadoqlash dizayni': 'qadozlash dizayni.png'
+    };
+
+    if (mapping[nameUz]) return `/${mapping[nameUz]}`;
+
+    // Common JPG services
+    const jpgServices = [
+        'Brendlangan ruchkalar',
+        'Instagram Facebook reklama',
+        'NFC vizitkalar va stikerlar',
+        'Onlayn katalog va portfolio',
+        'Veb-sayt yaratish',
+        'WebAR  AR reklama loyihalari',
+        'Dizayndan bosmagacha to\'liq xizmat'
+    ];
+
+    const extension = jpgServices.includes(nameUz) ? 'jpg' : 'png';
+    return `/${nameUz}.${extension}`;
+};
+
 // Category configuration with colors, icons, and images
 const categoryConfig = {
     poligrafiya: {
@@ -176,8 +205,8 @@ export default function Services() {
                             <button
                                 onClick={() => handleCategoryChange('all')}
                                 className={`flex items-center gap-2 px-4 py-2.5 rounded-xl font-medium transition-all duration-300 ${activeCategory === 'all'
-                                        ? 'bg-primary-500 text-white shadow-lg shadow-primary-500/30 scale-105'
-                                        : 'bg-white dark:bg-dark-800 text-dark-600 dark:text-dark-300 hover:bg-dark-100 dark:hover:bg-dark-700 border border-dark-200 dark:border-dark-700'
+                                    ? 'bg-primary-500 text-white shadow-lg shadow-primary-500/30 scale-105'
+                                    : 'bg-white dark:bg-dark-800 text-dark-600 dark:text-dark-300 hover:bg-dark-100 dark:hover:bg-dark-700 border border-dark-200 dark:border-dark-700'
                                     }`}
                             >
                                 {t('services.filter.all')}
@@ -194,8 +223,8 @@ export default function Services() {
                                         key={category}
                                         onClick={() => handleCategoryChange(category)}
                                         className={`flex items-center gap-2 px-4 py-2.5 rounded-xl font-medium transition-all duration-300 ${isActive
-                                                ? `bg-gradient-to-r ${config.color} text-white shadow-lg scale-105`
-                                                : `bg-white dark:bg-dark-800 text-dark-600 dark:text-dark-300 hover:${config.bgColor} border border-dark-200 dark:border-dark-700`
+                                            ? `bg-gradient-to-r ${config.color} text-white shadow-lg scale-105`
+                                            : `bg-white dark:bg-dark-800 text-dark-600 dark:text-dark-300 hover:${config.bgColor} border border-dark-200 dark:border-dark-700`
                                             }`}
                                     >
                                         <IconComponent className="w-4 h-4" />
@@ -267,13 +296,17 @@ export default function Services() {
                                                         onClick={() => setSelectedService(service)}
                                                     >
                                                         {/* Card Image */}
-                                                        <div className="relative h-40 overflow-hidden">
+                                                        <div className="relative h-48 overflow-hidden">
                                                             <img
-                                                                src={service.image || config.image}
+                                                                src={getServiceImage(service.name.uz)}
                                                                 alt={service.name[lang] || service.name.uz}
-                                                                className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                                                                className="w-full h-[125%] object-cover object-center transform group-hover:scale-110 transition-transform duration-500"
+                                                                onError={(e) => {
+                                                                    const target = e.target as HTMLImageElement;
+                                                                    target.src = service.image || config.image;
+                                                                }}
                                                             />
-                                                            <div className={`absolute inset-0 bg-gradient-to-t ${config.color} opacity-60 group-hover:opacity-40 transition-opacity duration-300`} />
+                                                            <div className={`absolute inset-0 bg-gradient-to-t ${config.color} opacity-20 group-hover:opacity-10 transition-opacity duration-300`} />
 
                                                             {/* Category Badge */}
                                                             <div className="absolute top-3 left-3">
@@ -329,6 +362,7 @@ export default function Services() {
             {selectedService && (
                 <OrderModal
                     service={selectedService}
+                    imageSrc={getServiceImage(selectedService.name.uz)}
                     onClose={() => setSelectedService(null)}
                 />
             )}
