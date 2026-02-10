@@ -12,13 +12,13 @@ export class TelegramService implements OnModuleInit {
     private readonly logger = new Logger(TelegramService.name);
     private bot: any = null;
     private adminChatId: string = '';
-    private webAppUrl: string = 'https://c921-213-230-93-42.ngrok-free.app/'
+    private webAppUrl: string = '';
 
     constructor(
         private configService: ConfigService,
         private settingsService: SettingsService,
     ) {
-        this.webAppUrl = "https://c921-213-230-93-42.ngrok-free.app";
+        this.webAppUrl = this.configService.get<string>('WEBAPP_URL') || 'https://milliybrendagency.uz';
     }
 
     async onModuleInit() {
