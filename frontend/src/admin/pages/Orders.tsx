@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Check, Clock, CheckCircle, Trash2 } from 'lucide-react';
+import { Clock, CheckCircle, Trash2 } from 'lucide-react';
 import toast from 'react-hot-toast';
 import { ordersApi } from '../../api';
 import type { Order } from '../../types';

@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import toast from 'react-hot-toast';
-import { worksApi, ordersApi } from '../api';
+import { worksApi } from '../api';
 import type { Work, Language } from '../types';
 import OrderModal from '../components/ui/OrderModal';
 
