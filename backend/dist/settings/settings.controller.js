@@ -20,6 +20,7 @@ const roles_guard_1 = require("../auth/guards/roles.guard");
 const roles_decorator_1 = require("../auth/decorators/roles.decorator");
 const user_schema_1 = require("../users/schemas/user.schema");
 const class_validator_1 = require("class-validator");
+const telegram_service_1 = require("../telegram/telegram.service");
 class SetSettingDto {
 }
 __decorate([
@@ -32,8 +33,9 @@ __decorate([
     __metadata("design:type", Object)
 ], SetSettingDto.prototype, "value", void 0);
 let SettingsController = class SettingsController {
-    constructor(settingsService) {
+    constructor(settingsService, telegramService) {
         this.settingsService = settingsService;
+        this.telegramService = telegramService;
     }
     findAll() {
         return this.settingsService.getAll();
@@ -41,8 +43,12 @@ let SettingsController = class SettingsController {
     findOne(key) {
         return this.settingsService.get(key);
     }
-    set(dto) {
-        return this.settingsService.set(dto.key, dto.value);
+    async set(dto) {
+        const result = await this.settingsService.set(dto.key, dto.value);
+        if (dto.key === 'telegram_token' || dto.key === 'telegram_admin_id') {
+            await this.telegramService.restartBot();
+        }
+        return result;
     }
     remove(key) {
         return this.settingsService.delete(key);
@@ -67,7 +73,7 @@ __decorate([
     __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [SetSettingDto]),
-    __metadata("design:returntype", void 0)
+    __metadata("design:returntype", Promise)
 ], SettingsController.prototype, "set", null);
 __decorate([
     (0, common_1.Delete)(':key'),
@@ -80,6 +86,8 @@ exports.SettingsController = SettingsController = __decorate([
     (0, common_1.Controller)('settings'),
     (0, common_1.UseGuards)(jwt_auth_guard_1.JwtAuthGuard, roles_guard_1.RolesGuard),
     (0, roles_decorator_1.Roles)(user_schema_1.UserRole.ADMIN),
-    __metadata("design:paramtypes", [settings_service_1.SettingsService])
+    __param(1, (0, common_1.Inject)((0, common_1.forwardRef)(() => telegram_service_1.TelegramService))),
+    __metadata("design:paramtypes", [settings_service_1.SettingsService,
+        telegram_service_1.TelegramService])
 ], SettingsController);
 //# sourceMappingURL=settings.controller.js.map

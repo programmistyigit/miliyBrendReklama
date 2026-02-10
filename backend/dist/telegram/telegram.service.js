@@ -24,8 +24,8 @@ let TelegramService = TelegramService_1 = class TelegramService {
         this.logger = new common_1.Logger(TelegramService_1.name);
         this.bot = null;
         this.adminChatId = '';
-        this.webAppUrl = 'https://c921-213-230-93-42.ngrok-free.app/';
-        this.webAppUrl = "https://c921-213-230-93-42.ngrok-free.app";
+        this.webAppUrl = '';
+        this.webAppUrl = this.configService.get('WEBAPP_URL') || 'https://milliybrendagency.uz';
     }
     async onModuleInit() {
         await this.initBot();

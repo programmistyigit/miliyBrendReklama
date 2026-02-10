@@ -17,7 +17,7 @@ exports.TelegramModule = TelegramModule;
 exports.TelegramModule = TelegramModule = __decorate([
     (0, common_1.Global)(),
     (0, common_1.Module)({
-        imports: [settings_module_1.SettingsModule],
+        imports: [(0, common_1.forwardRef)(() => settings_module_1.SettingsModule)],
         controllers: [telegram_controller_1.TelegramController],
         providers: [telegram_service_1.TelegramService],
         exports: [telegram_service_1.TelegramService],
