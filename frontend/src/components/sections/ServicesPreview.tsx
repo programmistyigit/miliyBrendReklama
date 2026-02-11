@@ -64,6 +64,8 @@ const services = [
     },
 ];
 
+import AppImage from '../ui/Image';
+
 export default function ServicesPreview() {
     const { t } = useTranslation();
 
@@ -96,7 +98,7 @@ export default function ServicesPreview() {
                             >
                                 {/* Image */}
                                 <div className="relative h-32 md:h-40 overflow-hidden">
-                                    <img
+                                    <AppImage
                                         src={service.image}
                                         alt={t(`services.categories.${service.categoryKey}.title`)}
                                         className="w-full h-[125%] object-cover object-center transform group-hover:scale-110 transition-transform duration-500"

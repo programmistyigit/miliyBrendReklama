@@ -1,6 +1,7 @@
 import { Routes, Route, useNavigate, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import GlobalLoader from './components/ui/GlobalLoader';
 import Layout from './components/layout/Layout';
 import Home from './pages/Home';
 import Works from './pages/Works';
@@ -36,6 +37,17 @@ function App() {
     const navigate = useNavigate();
     const location = useLocation();
 
+    const [isLoading, setIsLoading] = useState(true);
+
+    useEffect(() => {
+        // Simulate initial loading
+        const timer = setTimeout(() => {
+            setIsLoading(false);
+        }, 2000);
+
+        return () => clearTimeout(timer);
+    }, []);
+
     useEffect(() => {
         // Initialize Telegram Web App
         const tg = window.Telegram?.WebApp;
@@ -61,6 +73,7 @@ function App() {
 
     return (
         <AnimatePresence mode="wait">
+            {isLoading && <GlobalLoader key="loader" />}
             <Routes>
                 {/* Public Routes */}
                 <Route path="/" element={<Layout />}>

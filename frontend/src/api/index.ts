@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { AuthTokens } from '../types';
 
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || '/api';
+const API_BASE_URL = window.location.protocol + '//' + window.location.host + import.meta.env.VITE_API_BASE_URL || '/api';
 
 const api = axios.create({
     baseURL: API_BASE_URL,

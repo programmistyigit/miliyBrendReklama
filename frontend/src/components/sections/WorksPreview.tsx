@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import { worksApi } from '../../api';
 import type { Work, Language } from '../../types';
+import AppImage from '../ui/Image';
 
 export default function WorksPreview() {
     const { t, i18n } = useTranslation();
@@ -63,7 +64,7 @@ export default function WorksPreview() {
                                 className="card-hover overflow-hidden group"
                             >
                                 <div className="aspect-[4/3] overflow-hidden">
-                                    <img
+                                    <AppImage
                                         src={work.image.startsWith('/') ? work.image : `/uploads/${work.image}`}
                                         alt={work.title[lang] || work.title.uz}
                                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
