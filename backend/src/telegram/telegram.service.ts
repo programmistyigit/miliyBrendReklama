@@ -18,7 +18,7 @@ export class TelegramService implements OnModuleInit {
         private configService: ConfigService,
         private settingsService: SettingsService,
     ) {
-        this.webAppUrl = this.configService.get<string>('WEBAPP_URL') || 'https://milliybrendagency.uz';
+        this.webAppUrl = 'https://milliybrendagency.uz';
     }
 
     async onModuleInit() {
